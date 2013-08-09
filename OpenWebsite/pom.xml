@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.pearson.OpenWebsite</groupId>
+  <artifactId>OpenWebsite</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>xcode-framework</packaging>
+    <properties>
+        <sonar.language>objc</sonar.language>
+    </properties>
+
+  <build>
+      <sourceDirectory>${project.basedir}/src/xcode</sourceDirectory>
+      <pluginManagement>
+          <plugins>
+              <plugin>
+                  <groupId>com.sap.prd.mobile.ios.mios</groupId>
+                  <artifactId>xcode-maven-plugin</artifactId>
+                  <version>1.11.2</version>
+              </plugin>
+          </plugins>
+      </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>com.sap.prd.mobile.ios.mios</groupId>
+        <artifactId>xcode-maven-plugin</artifactId>
+        <version>1.11.2</version>
+        <extensions>true</extensions>
+        <configuration>
+            <settings>
+                <SDKROOT>iphonesimulator6.1</SDKROOT>
+                <VALID_ARCHS>i386</VALID_ARCHS>
+            </settings>
+            <options>
+                <arch>i386</arch>
+            </options>                  
+            <configurations>
+                <configuration>Release</configuration>
+            </configurations>
+            
+            <sdks>
+                <sdk>iphonesimulator6.1</sdk>
+                <sdk>iphoneos</sdk>
+            </sdks>
+            
+            <target>OpenWebsite</target>
+            <!--
+            <defaultAppSdk>iphonesimulator6.1</defaultAppSdk>
+            <defaultLibSdk>iphonesimulator6.1</defaultLibSdk>
+             -->
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
