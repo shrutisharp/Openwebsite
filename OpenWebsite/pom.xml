@@ -10,7 +10,6 @@
     <properties>
         <sonar.language>objc</sonar.language>
     </properties>
-
   <build>
       <sourceDirectory>${project.basedir}/src/xcode</sourceDirectory>
     <plugins>
